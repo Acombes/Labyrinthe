@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Labyrinthe</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form>
+    <button type="reset">Reset</button>
+
+    <div class="labyrinthe">
+        <input type="radio" name="cell" id="cell-1-1" checked="checked">
+        <input type="radio" name="cell" id="cell-1-2">
+        <input type="radio" name="cell" id="cell-1-3">
+        <input type="radio" name="cell" id="cell-1-4">
+        <input type="radio" name="cell" id="cell-1-5">
+        <input type="radio" name="cell" id="cell-2-1">
+        <input type="radio" name="cell" id="cell-2-2">
+        <input type="radio" name="cell" id="cell-2-3">
+        <input type="radio" name="cell" id="cell-2-4">
+        <input type="radio" name="cell" id="cell-2-5">
+        <input type="radio" name="cell" id="cell-3-1">
+        <input type="radio" name="cell" id="cell-3-2">
+        <input type="radio" name="cell" id="cell-3-3">
+        <input type="radio" name="cell" id="cell-3-4">
+        <input type="radio" name="cell" id="cell-3-5">
+        <input type="radio" name="cell" id="cell-4-1">
+        <input type="radio" name="cell" id="cell-4-2">
+        <input type="radio" name="cell" id="cell-4-3">
+        <input type="radio" name="cell" id="cell-4-4">
+        <input type="radio" name="cell" id="cell-4-5">
+        <input type="radio" name="cell" id="cell-5-1">
+        <input type="radio" name="cell" id="cell-5-2">
+        <input type="radio" name="cell" id="cell-5-3">
+        <input type="radio" name="cell" id="cell-5-4">
+        <input type="radio" name="cell" id="cell-5-5">
+
+        <div class="cell cell--direction-bottom" data-cell="1-1">
+            <label class="input-label" for="cell-1-1"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-right" data-cell="1-2">
+            <label class="input-label" for="cell-1-2"></label>
+        </div>
+
+        <div class="cell cell--direction-left" data-cell="1-3">
+            <label class="input-label" for="cell-1-3"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-right" data-cell="1-4">
+            <label class="input-label" for="cell-1-4"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-left" data-cell="1-5">
+            <label class="input-label" for="cell-1-5"></label>
+        </div>
+
+
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="2-1">
+            <label class="input-label" for="cell-2-1"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="2-2">
+            <label class="input-label" for="cell-2-2"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom" data-cell="2-3">
+            <label class="input-label" for="cell-2-3"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="2-4">
+            <label class="input-label" for="cell-2-4"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="2-5">
+            <label class="input-label" for="cell-2-5"></label>
+        </div>
+
+
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="3-1">
+            <label class="input-label" for="cell-3-1"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="3-2">
+            <label class="input-label" for="cell-3-2"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top cell--direction-right" data-cell="3-3">
+            <label class="input-label" for="cell-3-3"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top cell--direction-right cell--direction-left" data-cell="3-4">
+            <label class="input-label" for="cell-3-4"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top cell--direction-left" data-cell="3-5">
+            <label class="input-label" for="cell-3-5"></label>
+        </div>
+
+
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="4-1">
+            <label class="input-label" for="cell-4-1"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top cell--direction-right" data-cell="4-2">
+            <label class="input-label" for="cell-4-2"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top cell--direction-left" data-cell="4-3">
+            <label class="input-label" for="cell-4-3"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="4-4">
+            <label class="input-label" for="cell-4-4"></label>
+        </div>
+
+        <div class="cell cell--direction-bottom cell--direction-top" data-cell="4-5">
+            <label class="input-label" for="cell-4-5"></label>
+        </div>
+
+
+
+        <div class="cell cell--direction-right cell--direction-top" data-cell="5-1">
+            <label class="input-label" for="cell-5-1"></label>
+        </div>
+
+        <div class="cell cell--direction-left cell--direction-top" data-cell="5-2">
+            <label class="input-label" for="cell-5-2"></label>
+        </div>
+
+        <div class="cell cell--direction-right cell--direction-top" data-cell="5-3">
+            <label class="input-label" for="cell-5-3"></label>
+        </div>
+
+        <div class="cell cell--direction-left cell--direction-top" data-cell="5-4">
+            <label class="input-label" for="cell-5-4"></label>
+        </div>
+
+        <div class="cell cell--direction-top" data-cell="5-5">
+            <label class="input-label" for="cell-5-5"></label>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

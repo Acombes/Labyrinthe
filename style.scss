@@ -1,0 +1,109 @@
+@mixin generate($nbColumns, $nbRows) {
+    $cellDim: 100px;
+
+    width: $nbColumns * $cellDim;
+    height: $nbRows * $cellDim;
+    margin: 0 auto;
+    border: 1px solid #000;
+
+    & > input[type="radio"] {
+        display: block;
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .cell {
+        width: $cellDim;
+        height: $cellDim;
+        position: relative;
+        float: left;
+        border: inherit;
+        box-sizing: border-box;
+
+        &.cell--direction-top {
+            border-top-width: 0;
+        }
+
+        &.cell--direction-right {
+            border-right-width: 0;
+        }
+
+        &.cell--direction-bottom {
+            border-bottom-width: 0;
+        }
+
+        &.cell--direction-left {
+            border-left-width: 0;
+        }
+    }
+
+    .input-label {
+        @extend %enabled-cell;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    & > input[type="radio"]:checked ~ .cell .input-label {
+        display: none;
+    }
+
+    @for $r from 1 through $nbRows {
+        @for $c from 1 through $nbColumns {
+            $cellId: 'cell-#{$r}-#{$c}';
+
+            input#cell-#{$r}-#{$c}:checked {
+                & ~ .cell[data-cell="#{$r}-#{$c}"] {
+                    @extend %current-cell;
+                }
+
+                // Enable the upward cell
+                @if $r > 1 {
+                    & ~ .cell.cell--direction-bottom[data-cell="#{$r - 1}-#{$c}"] {
+                        @extend %enabled-cell;
+                    }
+                }
+
+                // Disable the right cell
+                @if $c < $nbColumns {
+                    & ~ .cell.cell--direction-left[data-cell="#{$r}-#{$c + 1}"] {
+                        @extend %enabled-cell;
+                    }
+                }
+
+                // Disable the bottom cell
+                @if $r < $nbRows {
+                    & ~ .cell.cell--direction-top[data-cell="#{$r + 1}-#{$c}"] {
+                        @extend %enabled-cell;
+                    }
+                }
+
+                // Disable the left cell
+                @if $c > 1 {
+                    & ~ .cell.cell--direction-right[data-cell="#{$r}-#{$c - 1}"] {
+                        @extend %enabled-cell;
+                    }
+                }
+            }
+        }
+    }
+
+    %current-cell {
+        background: chartreuse;
+    }
+
+    %enabled-cell {
+        background: indianred;
+
+        .input-label {
+            display: block;
+            cursor: pointer;
+        }
+    }
+}
+
+.labyrinthe {
+    @include generate(5, 5);
+}
