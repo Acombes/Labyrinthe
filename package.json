@@ -1,0 +1,16 @@
+{
+  "name": "labyrinthe",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/Acombes/Labyrinthe.git",
+  "author": "Antoine COMBES <antoine.combes@smile.fr>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon -e scss -x \"npm run sass\"",
+    "sass": "node-sass --include-path --source-map=true src/style.scss src/style.css -o src/"
+  },
+  "dependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0"
+  }
+}
